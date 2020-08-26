@@ -17,17 +17,19 @@ var options = {
     extensions: {
         html: {
             name: 'pug',
+            watch: '/**/*.pug',
             src: '/*.pug',
             build: '/'
         },
         css: {
             name: 'sass',
-            src: '/sass/**/*.sass',
-            build: '/css',
-            input: 'styles.sass'
+            watch: '/sass/**/*.sass',
+            src: '/sass/styles.sass',
+            build: '/css'
         },
         js: {
             name: 'js',
+            watch: '/js/**/*.js',
             src: '/js/**/*.js',
             build: '/js',
             output: 'script.js'
@@ -54,8 +56,7 @@ gulp.task('default', function () {
 
     for (key in options.extensions) {
         let extension = options.extensions[key];
-        gulp.series(extension.name);
-        gulp.watch(options.src + extension.src, gulp.series(extension.name));
+        gulp.watch(options.src + extension.watch, gulp.series(extension.name));
     }
 
     gulp.watch(options.build + "/index.html").on('change', browserSync.reload);
@@ -65,7 +66,9 @@ gulp.task('default', function () {
 gulp.task(options.extensions.html.name, function () {
     var extension = options.extensions.html;
     return gulp.src(options.src + extension.src)
-        .pipe(pug())
+        .pipe(pug({
+            pretty: true
+        }))
         .pipe(gulp.dest(options.build + extension.build));
 });
 
