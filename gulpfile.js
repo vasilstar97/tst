@@ -58,57 +58,51 @@ gulp.task('default', function () {
         gulp.watch(options.src + extension.src, gulp.series(extension.name));
     }
 
-    gulp.watch(options.build + "index.html").on('change', browserSync.reload);
+    gulp.watch(options.build + "/index.html").on('change', browserSync.reload);
 });
 
 //html
 gulp.task(options.extensions.html.name, function () {
-    return pipeline(
-        gulp.src(options.src + options.extensions.html.src),
-        pug(),
-        gulp.dest(options.build + options.extensions.html.build)
-    );
+    var extension = options.extensions.html;
+    return gulp.src(options.src + extension.src)
+        .pipe(pug())
+        .pipe(gulp.dest(options.build + extension.build));
 });
 
 //css
 gulp.task(options.extensions.css.name, function () {
-    return pipeline(
-        gulp.src(options.src + options.extensions.css.src),
-        sass().on('error', sass.logError),
-        cleanCSS({
+    var extension = options.extensions.css;
+    return gulp.src(options.src + extension.src)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(cleanCSS({
             compatibility: 'ie8'
-        }),
-        autoprefixer({
+        }))
+        .pipe(autoprefixer({
             cascade: false
-        }),
-        gulp.dest(options.build + options.extensions.css.build),
-        browserSync.stream()
-    );
-});
-
-//img
-gulp.task(options.extensions.img.name, function () {
-    return pipeline(
-        gulp.src(options.src + options.extensions.img.src),
-        gulp.dest(options.build + options.extensions.img.build)
-    );
+        }))
+        .pipe(gulp.dest(options.build + extension.build))
+        .pipe(browserSync.stream());
 });
 
 //js
 gulp.task(options.extensions.js.name, function () {
     var extension = options.extensions.js;
-    return pipeline(
-        gulp.src(options.src + extension.src),
-        concat(extension.output),
-        uglify(),
-        gulp.dest(options.build + extension.build)
-    );
+    return gulp.src(options.src + extension.src)
+        .pipe(concat(extension.output))
+        .pipe(uglify())
+        .pipe(gulp.dest(options.build + extension.build));
+});
+
+//img
+gulp.task(options.extensions.img.name, function () {
+    var extension = options.extensions.img;
+    return gulp.src(options.src + extension.src)
+        .pipe(gulp.dest(options.build + extension.build));
 });
 
 //fonts
 gulp.task(options.extensions.fonts.name, function () {
-    return pipeline(
-        gulp.src(options.src + options.extensions.fonts.src),
-        gulp.dest(options.build + options.extensions.fonts.build)
-    );
+    var extension = options.extensions.fonts;
+    return gulp.src(options.src + extension.src)
+        .pipe(gulp.dest(options.build + extension.build));
 });
