@@ -1,0 +1,24 @@
+.info {
+    padding: 60px 0;
+    &__container {
+        width:$containerWidth;
+        margin:0 auto;
+        background-color:#f8f8f8;
+        border-radius: 25px;
+        box-sizing: border-box;
+        padding:40px 100px;
+    }
+    &__list {
+        //ul
+    }
+    &__item {
+        &:not(:first-child) {
+            margin-top:30px;
+        }
+    }
+    &__link {
+        font-weight: 500;
+        color: black;
+        font-size: 32px;
+    }
+}

@@ -1,0 +1,32 @@
+.partners {
+    &__container {
+        width:$containerWidth;
+        margin:0 auto;
+        padding:120px 0;
+    }
+    &__heading {
+        margin-bottom:45px;
+    }
+    &__grid {
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left:-30px;
+        margin-top:-30px;
+    }
+    &__cell {
+        box-sizing: border-box;
+        width:percentage(1/7);
+
+        padding-left:30px;
+        padding-top:30px;
+    }
+    &__item {
+        display:block;
+        padding-top:72%;
+
+        background-repeat: no-repeat;
+        background-size:contain;
+        background-position: 50% 50%;
+    }
+}

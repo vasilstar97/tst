@@ -23,8 +23,8 @@ var options = {
         },
         css: {
             name: 'sass',
-            watch: '/sass/**/*.sass',
-            src: '/sass/styles.sass',
+            watch: '/sass/**/*.*',
+            src: '/sass/styles.scss',
             build: '/css'
         },
         js: {
@@ -36,31 +36,16 @@ var options = {
         },
         img: {
             name: 'img',
-            src: '/img/**/*',
+            src: '/img/**/*.*',
             build: '/img'
         },
         fonts: {
             name: 'fonts',
-            src: '/fonts/**/*',
+            src: '/fonts/**/*.*',
             build: '/fonts'
         },
     },
 };
-
-gulp.task('default', function () {
-    browserSync.init({
-        server: {
-            baseDir: options.build
-        }
-    });
-
-    for (key in options.extensions) {
-        let extension = options.extensions[key];
-        gulp.watch(options.src + extension.watch, gulp.series(extension.name));
-    }
-
-    gulp.watch(options.build + "/index.html").on('change', browserSync.reload);
-});
 
 //html
 gulp.task(options.extensions.html.name, function () {
@@ -108,4 +93,20 @@ gulp.task(options.extensions.fonts.name, function () {
     var extension = options.extensions.fonts;
     return gulp.src(options.src + extension.src)
         .pipe(gulp.dest(options.build + extension.build));
+});
+
+gulp.task('default', function () {
+    browserSync.init({
+        server: {
+            baseDir: options.build
+        }
+    });
+
+    for (key in options.extensions) {
+        let extension = options.extensions[key];
+        gulp.series(extension.name);
+        gulp.watch(options.src + extension.watch, gulp.series(extension.name));
+    }
+
+    gulp.watch(options.build + "/*.html").on('change', browserSync.reload);
 });

@@ -1,0 +1,55 @@
+.footer {
+    position: relative;
+    z-index:10;
+
+    &__waves {
+        position: absolute;
+        background-image: url(../img/footer/wave1.svg);
+
+        &:before {
+            
+        }
+        &:after {
+
+        }
+    }
+
+    &__container {
+        width:$containerWidth;
+        margin:0 auto;
+        display:flex;
+    }
+    &__cell {
+        &:nth-child(1) {
+
+        }
+        &:nth-child(2) {
+
+        }
+        &:nth-child(3) {
+
+        }
+    }
+    &__button {
+        display:block;
+        margin:15px auto 50px auto;
+        width:100px;
+        height:100px;
+        background-color:$mainColor;
+        border-radius: 50%;
+        position:relative;
+
+        &:after {
+            content:"";
+            position: absolute;
+            left:28px;
+            top:22px;
+            width:45px;
+            height:28px;
+            background-image: url(../img/footer/return.svg);
+            background-repeat: no-repeat;;
+            background-size:contain;
+            background-position:50% 50%;        
+        }
+    }
+}

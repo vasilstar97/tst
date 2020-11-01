@@ -1,0 +1,29 @@
+@import "uikit/uikit-rtl.min.css";
+@import "uikit/uikit.min.css";
+
+@import "reset.scss";
+@import "variables.scss";
+
+body {
+    font-family: $mainFont;
+    color:$mainColor;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size:32px;
+    font-weight: 500;
+}
+
+@import "blocks/ad.scss";
+@import "blocks/tyles.scss";
+@import "blocks/products.scss";
+@import "blocks/partners.scss";
+@import "blocks/info.scss";
+@import "blocks/footer.scss";
+
+@import "components/simple-card.scss";
+
+

@@ -1,0 +1,18 @@
+.tiles {
+    &__container {
+        width:$containerWidth;
+        margin:0 auto;
+    }
+    &__grid {
+        display:flex;
+        margin-left: -30px;
+        margin-top: -30px;
+    }
+    &__cell {
+        padding-left: 30px;
+        padding-top: 30px;
+        &:nth-child(1) {
+            height:100%;
+        }
+    }
+}

@@ -1,5 +1,59 @@
 include layouts/head.pug
 body
-    h1 Hello World
-    
-    include layouts/footer.pug
+    section.ad
+        .ad__container
+            h2.ad__heading БУДЬТЕ НАШИМ КЛИЕНТОМ!
+            a.ad__button ВЫБЕРИТЕ КАТЕГОРИЮ
+    section.tiles
+        .tiles__container
+            
+    section.products
+        .products__container
+            h3.products__heading Популярное
+            .products__grid
+                - var n = 0;
+                while n < 8
+                    .products__cell
+                        .products__card.simple-card(style="background-image:url('../img/products/dude.png')")
+                            a.simple-card__link(data-text="подробнее")
+                            - n++;
+            .products__wrapper 
+                a.products__more показать еще
+            .products__wrapper
+                p.products__description Широкий ассортимент и высокое качество
+    section.partners
+        .partners__container
+            h3.partners__heading Наши партнеры
+            .partners__grid
+                .partners__cell 
+                    a.partners__item(style="background-image:url('../img/partners/1.png')")
+                .partners__cell 
+                    a.partners__item(style="background-image:url('../img/partners/2.png')")    
+                .partners__cell 
+                    a.partners__item(style="background-image:url('../img/partners/3.png')")
+                .partners__cell 
+                    a.partners__item(style="background-image:url('../img/partners/4.png')")
+                .partners__cell 
+                    a.partners__item(style="background-image:url('../img/partners/5.png')")
+                .partners__cell 
+                    a.partners__item(style="background-image:url('../img/partners/6.png')")
+                .partners__cell 
+                    a.partners__item(style="background-image:url('../img/partners/7.png')")
+    section.info
+        .info__container
+            ul.info__list
+                li.info__item
+                    a.info__link О компании
+                li.info__item
+                    a.info__link Шоурум
+                li.info__item
+                    a.info__link Доставка
+                li.info__item
+                    a.info__link Примерка
+                li.info__item
+                    a.info__link Оплата
+                li.info__item
+                    a.info__link Гарантия
+                li.info__item
+                    a.info__link Возврат
+    include layouts/footer.pug 
