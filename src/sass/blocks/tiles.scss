@@ -1,18 +1,56 @@
 .tiles {
+    
+    position: relative;
+    z-index:10;
+    &:before {
+        content:"";
+        height:200px;
+        width:100%;
+        top:0;
+        left:0;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-image:url('../img/tiles/bg.svg');
+        z-index:-5;
+    }
+    &:after {
+        content:"";
+        position: absolute;
+        height:50px;
+        width:50px;
+        bottom:-15px;
+        left:50%;
+        transform:translateX(335px);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 50%;
+        background-image:url('../img/tiles/arrow.svg');
+    }
     &__container {
         width:$containerWidth;
-        margin:0 auto;
-    }
-    &__grid {
+        margin:0 auto;  
         display:flex;
-        margin-left: -30px;
-        margin-top: -30px;
+        justify-content: center;    
+        align-items: center;
+        padding:50px 0;
     }
-    &__cell {
-        padding-left: 30px;
-        padding-top: 30px;
-        &:nth-child(1) {
-            height:100%;
-        }
+    &__heading {
+        margin-right:20px;
+        color:$secondColor;
+        text-transform: uppercase;
+        font-size:46px;
+        font-weight: 700;
+    }
+    &__button {
+        display:inline-block;
+        padding:14px 18px;
+        font-size:18px;
+        font-weight: 700;
+        color:black;
+        background-color:$secondColor;
+        text-transform: uppercase;
+        border-radius: 25px;
     }
 }

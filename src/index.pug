@@ -1,12 +1,22 @@
 include layouts/head.pug
 body
-    section.ad
-        .ad__container
-            h2.ad__heading БУДЬТЕ НАШИМ КЛИЕНТОМ!
-            a.ad__button ВЫБЕРИТЕ КАТЕГОРИЮ
+    include layouts/navigation.pug
+    section.slider
+        .slider__container
+            div(uk-slider="autoplay: true; autoplay-interval: 5000; pause-on-hover: true")
+                .uk-position-relative
+                    .uk-slider-container
+                        ul.uk-slider-items.uk-child-width-1-1
+                            - var n = 0;
+                            while n < 3
+                                li
+                                    a.slider__slide(href="" style="background-image:url('../img/slider/rect.png')")
+                                    - n++;
+                ul.uk-slider-nav.uk-dotnav
     section.tiles
         .tiles__container
-            
+            h2.tiles__heading БУДЬТЕ НАШИМ КЛИЕНТОМ!
+            a.tiles__button ВЫБЕРИТЕ КАТЕГОРИЮ
     section.products
         .products__container
             h3.products__heading Популярное

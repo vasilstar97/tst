@@ -6,17 +6,47 @@
   <meta name="description" content="The HTML5 Herald"/>
   <meta name="author" content="Vasilstar"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600"/>
   <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
-  <section class="ad">
-    <div class="ad__container">
-      <h2 class="ad__heading">БУДЬТЕ НАШИМ КЛИЕНТОМ!</h2><a class="ad__button">ВЫБЕРИТЕ КАТЕГОРИЮ</a>
+  <nav class="navigation">
+    <div class="navigation__container">
+      <ul class="navigation__list">
+        <li class="navigation__item"><a class="navigation__link">профессия</a></li>
+        <li class="navigation__item"><a class="navigation__link">защита   </a></li>
+        <li class="navigation__item"><a class="navigation__link">охота   </a></li>
+        <li class="navigation__item"><a class="navigation__link">рыбалка   </a></li>
+        <li class="navigation__item"><a class="navigation__link">туризм   </a></li>
+        <li class="navigation__item"><a class="navigation__link">отдых   </a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="slider">
+    <div class="slider__container">
+      <div uk-slider="autoplay: true; autoplay-interval: 5000; pause-on-hover: true">
+        <div class="uk-position-relative">
+          <div class="uk-slider-container">
+            <ul class="uk-slider-items uk-child-width-1-1">
+              <li><a class="slider__slide" href="" style="background-image:url('../img/slider/rect.png')"></a>
+              </li>
+              <li><a class="slider__slide" href="" style="background-image:url('../img/slider/rect.png')"></a>
+              </li>
+              <li><a class="slider__slide" href="" style="background-image:url('../img/slider/rect.png')"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <ul class="uk-slider-nav uk-dotnav"></ul>
+      </div>
     </div>
   </section>
-  <section class="tiles"></section>
+  <section class="tiles">
+    <div class="tiles__container">
+      <h2 class="tiles__heading">БУДЬТЕ НАШИМ КЛИЕНТОМ!</h2><a class="tiles__button">ВЫБЕРИТЕ КАТЕГОРИЮ</a>
+    </div>
+  </section>
   <section class="products">
     <div class="products__container">
       <h3 class="products__heading">Популярное</h3>
@@ -91,9 +121,18 @@
     <div class="footer__waves"></div>
     <div class="footer__container"><a class="footer__button" href="#" uk-scroll="uk-scroll"></a>
       <div class="footer__grid">
-        <div class="footer__cell"></div>
-        <div class="footer__cell"></div>
-        <div class="footer__cell"></div>
+        <div class="footer__cell"> 
+          <h4 class="footer__heading">
+             Всегда на связи для Вас</h4>
+          <p class="footer__description">
+             Позвоните нам на <a href="tel:83452566226">8-345-256-62-26 </a>или напишите. Мы обязательно ответим</p>
+        </div>
+        <div class="footer__cell"> <img class="footer__logo" src="../img/logo.png"/>
+          <p class="footer__address">ООО «Тюмень Спец Трейдинг» / ООО «ТСТ» г. Тюмень, ул. Чернышевского, д. 1, к. 5</p>
+          <p class="footer__contacts">
+             Тел.: <a>+7 (3452) 566-226 </a>, <a>+7 (3452) 565-202</a> <a>office@oootct.ru</a>, <a>www.oootct.ru</a></p>
+        </div>
+        <div class="footer__cell"> <a class="footer__social footer__social_mail"></a><a class="footer__social footer__social_inst"></a></div>
       </div>
     </div>
   </footer>

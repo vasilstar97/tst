@@ -1,0 +1,29 @@
+.navigation {
+    font-family: $secondFont;
+
+    &__container {
+        width:$containerWidth;
+        height:80px;
+        margin: 0 auto;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__list {
+        display:flex;
+        flex-wrap: nowrap;
+        margin-left: -25px;
+    }
+    &__item {
+        padding-left: 25px;
+    }
+    &__link {
+        font-size:18px;
+        text-transform: uppercase;
+        color:$mainColor;
+        transition:color .3s;
+        &:hover {
+            color:$secondColor;
+        }
+    }
+}

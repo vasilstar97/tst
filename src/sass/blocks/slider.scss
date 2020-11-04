@@ -1,0 +1,35 @@
+.slider {
+    &__container {
+        margin:0 auto;
+        width:$containerWidth;
+        padding:120px 0;
+    }
+    &__slide {
+        padding-top:37%;
+        display:block;
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position: 50% 50%;
+    }
+
+    .uk-slider-container {
+        border-radius:25px;
+    }
+    .uk-slider-nav.uk-dotnav {
+        margin:60px auto 0 auto;
+        justify-content: center;
+        >li {
+            padding:0 15px;
+            >a {
+                width:25px;
+                height:25px;
+                border:none;
+
+                background-color:rgba(251, 185, 0, 0.2);
+            }
+            &.uk-active>a {
+                background-color:#FBB900;
+            }
+        }
+    }
+}
