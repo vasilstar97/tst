@@ -1,8 +1,17 @@
 .partners {
+    padding:120px 0 180px 0;
+    &_background {
+        background-position: 50% 100%;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-image:url(../img/background.png);
+    }
+    &_no-top-padding {
+        padding-top:0;
+    }
     &__container {
         width:$containerWidth;
         margin:0 auto;
-        padding:120px 0;
     }
     &__heading {
         margin-bottom:45px;

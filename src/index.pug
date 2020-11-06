@@ -1,6 +1,25 @@
 include layouts/head.pug
 body
-    include layouts/navigation.pug
+    //- include layouts/navigation.pug
+    section.header(style="background-image:url('../img/header/bg.jpg')")
+        .header__container
+            include layouts/navigation.pug
+            .header__top
+                    .header__search
+                        .header__input
+                            form(action="")
+                                input(type="text" placeholder="Название, тип, производитель, код товара")
+                        a.header__basket(data-count="2") корзина
+                    ul.header__info
+                        li 
+                            a +7 (3452) 566 226
+                        li г. Тюмень, ул. Чернышевского, д. 1, к. 5
+                        li ПН-ПТ: 09:00-18:00
+            img.header__logo(src="../img/logo.png")
+            p.header__description
+                | Онлайн дискаунтер спецодежды
+                | и средств защиты для работы и отдыха
+            a.header__button перейти в каталог
     section.slider
         .slider__container
             div(uk-slider="autoplay: true; autoplay-interval: 5000; pause-on-hover: true")
@@ -14,10 +33,24 @@ body
                                     - n++;
                 ul.uk-slider-nav.uk-dotnav
     section.tiles
-        .tiles__container
+        .tiles__header
             h2.tiles__heading БУДЬТЕ НАШИМ КЛИЕНТОМ!
             a.tiles__button ВЫБЕРИТЕ КАТЕГОРИЮ
-    section.products
+        .tiles__container 
+            .tiles__grid
+                .tiles__cell
+                    .tiles__item.tiles__item_yellow(style="background-image:url('../img/tiles/item.png')")
+                .tiles__cell
+                    .tiles__item(style="background-image:url('../img/tiles/item.png')")
+                .tiles__cell
+                    .tiles__item(style="background-image:url('../img/tiles/item.png')")
+                .tiles__cell
+                    .tiles__item.tiles__item_yellow(style="background-image:url('../img/tiles/item.png')")
+                .tiles__cell
+                    .tiles__item(style="background-image:url('../img/tiles/item.png')")
+
+
+    section.products.products_main
         .products__container
             h3.products__heading Популярное
             .products__grid
@@ -31,7 +64,7 @@ body
                 a.products__more показать еще
             .products__wrapper
                 p.products__description Широкий ассортимент и высокое качество
-    section.partners
+    section.partners.partners_no-top-padding
         .partners__container
             h3.partners__heading Наши партнеры
             .partners__grid

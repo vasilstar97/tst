@@ -18,6 +18,7 @@ h3 {
 }
 
 @import "blocks/navigation.scss";
+@import "blocks/header.scss";
 @import "blocks/slider.scss";
 @import "blocks/tiles.scss";
 @import "blocks/products.scss";
@@ -25,6 +26,11 @@ h3 {
 @import "blocks/info.scss";
 @import "blocks/footer.scss";
 
+@import "blocks/catalog.scss";
+@import "blocks/price.scss";
+
+@import "components/breadcrumbs.scss";
 @import "components/simple-card.scss";
+@import "components/card.scss";
 
 

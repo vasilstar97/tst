@@ -1,0 +1,95 @@
+include layouts/head.pug
+body
+    section.header(style="background-image:url('../img/header/bg-catalogue.png')").header_secondary
+        .header__container
+            include layouts/navigation.pug
+            .header__top
+                    .header__search
+                        .header__input
+                            form(action="")
+                                input(type="text" placeholder="Название, тип, производитель, код товара")
+                        a.header__basket(data-count="2") корзина
+                    ul.header__info
+                        li 
+                            a +7 (3452) 566 226
+                        li г. Тюмень, ул. Чернышевского, д. 1, к. 5
+                        li ПН-ПТ: 09:00-18:00
+            img.header__logo(src="../img/logo.png")
+            h1.header__heading Каталог
+
+    section.catalog
+        .catalog__container
+            ul.catalog__breadcrumbs.breadcrumbs
+                li
+                    a Главная
+                li
+                    a Каталог Роб-Роб
+                li
+                    a Спецодежда
+            .catalog__heading
+                h2 спецодежда
+                p 576 товаров
+            .catalog__interface
+                .catalog__column
+                    .catalog__item
+                        h3 выберите раздел
+                        div 
+                            ul
+                                li
+                                    a Головные уборы
+                                li
+                                    a Спецодежда для медицины
+                                li
+                                    a Спецодежда для охоты
+                                li
+                                    a Спецодежда для рыбалки
+                                li
+                                    a Спецодежда для охранных структур
+                                li
+                                    a Спецодежда для пищевой промышленности
+                                li
+                                    a Спецодежда для сферы услуг
+                                li
+                                    a Спецодежда защитная
+                                li
+                                    a Спецодежда зимняя
+                                li
+                                    a Спецодежда летняя
+                    .catalog__item
+                        h3 выберите раздел
+                        div fsfsdf
+                    .catalog__item
+                        h3 выберите раздел
+                        div fsfsdf
+                .catalog__column 
+                    .catalog__title fsfdf
+                        a
+                    .catalog__grid
+                        .catalog__card
+                            .card
+
+
+    section.price
+        .price__container
+            h2.price__heading Вы можете скачать прайс-лист на весь каталог товаров
+            a.price__button скачать
+
+    section.partners.partners_background
+        .partners__container
+            h3.partners__heading Наши партнеры
+            .partners__grid
+                .partners__cell 
+                    a.partners__item(style="background-image:url('../img/partners/1.png')")
+                .partners__cell 
+                    a.partners__item(style="background-image:url('../img/partners/2.png')")    
+                .partners__cell 
+                    a.partners__item(style="background-image:url('../img/partners/3.png')")
+                .partners__cell 
+                    a.partners__item(style="background-image:url('../img/partners/4.png')")
+                .partners__cell 
+                    a.partners__item(style="background-image:url('../img/partners/5.png')")
+                .partners__cell 
+                    a.partners__item(style="background-image:url('../img/partners/6.png')")
+                .partners__cell 
+                    a.partners__item(style="background-image:url('../img/partners/7.png')")
+    include layouts/footer.pug

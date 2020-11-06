@@ -1,0 +1,36 @@
+.breadcrumbs {
+    position: relative;
+    display:flex;
+    align-items: center;
+    font-size:10px;
+    font-weight: 500;
+    &:before {
+        content:"";
+        width:9px;
+        height:9px;
+        display:block;
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-image: url(../img/breadcrumbs/icon.png);
+        margin-right:5px;
+    }
+    li {
+        &:not(:last-child) a {
+            color: $mainColor;
+            &:hover {
+                color:$secondColor;
+                transition:.3s;
+            }
+        }
+        
+        &:last-child a {
+            color: rgb(144,144,144);
+        }
+    
+        &:not(:last-child):after {
+            content:"/";
+            padding:0 2px;
+        }
+    }
+}

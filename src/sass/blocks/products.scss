@@ -1,10 +1,22 @@
 .products {
     background-color:#F8F8F8;
+    padding-top:40px;
+    
+    &.products_main:after {
+        content:"";
+        display:block;
+        background-color:white;
+        height:280px;
+        width:100%;
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position: 50% 100%;
+        background-image:url(../img/products/background.svg);
+    }
 
     &__container {
         width:$containerWidth;
         margin:0 auto;
-        padding:40px 0;
     }
 
     &__heading {

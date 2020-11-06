@@ -1,6 +1,9 @@
 .navigation {
     font-family: $secondFont;
-
+    color:$mainColor;
+    &_contrast {
+        color:white;
+    }
     &__container {
         width:$containerWidth;
         height:80px;
@@ -13,17 +16,87 @@
         display:flex;
         flex-wrap: nowrap;
         margin-left: -25px;
+        li {
+            padding-left: 25px;
+            a {
+                font-size:18px;
+                text-transform: uppercase;
+                color:inherit;
+                transition:color .3s;
+                &:hover {
+                    color:$secondColor;
+                }
+            }
+        }
     }
-    &__item {
-        padding-left: 25px;
-    }
-    &__link {
+    &__entity {
+        position: relative;
+        z-index:10;
+        color:$mainColor;
         font-size:18px;
         text-transform: uppercase;
-        color:$mainColor;
-        transition:color .3s;
+        font-family: $mainFont;
+        height:100%;
+        width:81px;
+        box-sizing: border-box;
+        padding-top:15px;
+        text-align: center;
         &:hover {
-            color:$secondColor;
+            color:$mainColor;
+        }
+        &:after {
+            content:"";
+            position: absolute;
+            height:89px;
+            width:107px;
+            left:50%;
+            top:0;
+            transform:translateX(-50%);
+            background-repeat:no-repeat;
+            background-size:contain;
+            background-position: 50% 0;
+            background-image: url(../img/navigation/leaf.svg);
+            z-index:-1;
+        }
+    }
+    &__city {
+        display:inline-block;
+        font-size:14px;
+        text-transform: uppercase;
+        color: $secondColor;
+        transition:color .3s;
+        position: relative;
+        &:hover {
+            color:inherit;
+        }
+        &:before {
+            content:"";
+            position: absolute;
+            left:0;
+            bottom:4px;
+            transform:translateX(-100%);
+            width:20px;
+            height:20px;
+            background-repeat:no-repeat;
+            background-size:contain;
+            background-position: 50% 50%;
+            background-image: url(../img/navigation/marker.svg);
+        }
+    }
+    &__login {
+        display:flex;
+        margin-left:-20px;
+        li {
+            padding-left:20px;
+            a {
+                font-size:14px;
+                text-transform: uppercase;
+                color:inherit;
+                transition:color .3s;
+                &:hover {
+                    color: $secondColor;
+                }
+            }
         }
     }
 }
