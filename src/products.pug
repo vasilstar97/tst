@@ -1,6 +1,6 @@
 include layouts/head.pug
 body
-    section.header(style="background-image:url('../img/header/bg-catalogue.png')").header_secondary
+    section.header(style="background-image:url('../build/img/header/bg-catalogue.png')").header_secondary
         .header__container
             include layouts/navigation.pug
             .header__top
@@ -14,7 +14,7 @@ body
                             a +7 (3452) 566 226
                         li г. Тюмень, ул. Чернышевского, д. 1, к. 5
                         li ПН-ПТ: 09:00-18:00
-            img.header__logo(src="../img/logo.png")
+            img.header__logo(src="../build/img/logo.png")
             h1.header__heading Каталог
 
     section.catalog
@@ -56,17 +56,28 @@ body
                                 li
                                     a Спецодежда летняя
                     .catalog__item
-                        h3 выберите раздел
-                        div fsfsdf
+                        h3 цена
+                        div 
                     .catalog__item
-                        h3 выберите раздел
+                        h3 фильтр по параметрам
                         div fsfsdf
                 .catalog__column 
-                    .catalog__title fsfdf
+                    .catalog__title Сортировать по
                         a
                     .catalog__grid
-                        .catalog__card
-                            .card
+                        - var n = 0;
+                        while n < 6
+                            .catalog__card
+                                    .card
+                                        p.card__code Код: 334422
+                                        .card__img(style="background-image:url('../build/img/card/img.jpg')")
+                                        h4.card__name Костюм "Профессионал-2" цвет серый/синий
+                                        .card__info
+                                            .card__price 
+                                                p 1899 ₽
+                                                a В КОРЗину
+                                                - n++;
+                        a.catalog__more ПОКАЗАТЬ еще
 
 
     section.price
@@ -79,17 +90,17 @@ body
             h3.partners__heading Наши партнеры
             .partners__grid
                 .partners__cell 
-                    a.partners__item(style="background-image:url('../img/partners/1.png')")
+                    a.partners__item(style="background-image:url('../build/img/partners/1.png')")
                 .partners__cell 
-                    a.partners__item(style="background-image:url('../img/partners/2.png')")    
+                    a.partners__item(style="background-image:url('../build/img/partners/2.png')")    
                 .partners__cell 
-                    a.partners__item(style="background-image:url('../img/partners/3.png')")
+                    a.partners__item(style="background-image:url('../build/img/partners/3.png')")
                 .partners__cell 
-                    a.partners__item(style="background-image:url('../img/partners/4.png')")
+                    a.partners__item(style="background-image:url('../build/img/partners/4.png')")
                 .partners__cell 
-                    a.partners__item(style="background-image:url('../img/partners/5.png')")
+                    a.partners__item(style="background-image:url('../build/img/partners/5.png')")
                 .partners__cell 
-                    a.partners__item(style="background-image:url('../img/partners/6.png')")
+                    a.partners__item(style="background-image:url('../build/img/partners/6.png')")
                 .partners__cell 
-                    a.partners__item(style="background-image:url('../img/partners/7.png')")
+                    a.partners__item(style="background-image:url('../build/img/partners/7.png')")
     include layouts/footer.pug

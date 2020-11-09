@@ -3,9 +3,12 @@
     background-size:cover;
     background-position: 50% 0;
     background-image:url(../img/background.png);
-    padding:120px 0 195px 0;
+    padding-bottom: 195px;
+    padding-top:60px;
+    position: relative;
+    z-index:100;
     &__breadcrumbs {
-
+        //breadcrumbs
     }
     &__container {
         width:$containerWidth;
@@ -36,6 +39,11 @@
     }
     &__column {
         padding-left:10px;
+        &:first-child {
+            flex-shrink: 0;
+            flex-grow: 0;
+            max-width: 280px;
+        }
         &:last-child {
             flex-shrink: 1;
             flex-grow: 1;
@@ -99,16 +107,27 @@
         }
     }
     &__grid {
-        margin-left:-10px;
+        margin-left:-30px;
         display:flex;
         flex-wrap: wrap;
         justify-content: center;
     }
     &__card {
         //card
-        padding-left:10px;
+        padding-left:30px;
         padding-top:10px;
-        width:30%;
+        width:33.3333%;
         box-sizing: border-box;
+    }
+    &__more {
+        display:block;
+        margin-left:30px;
+        margin-top:40px;
+        border-radius:25px;
+        font-size:32px;
+        color:black;
+        border: 1px solid $mainColor;
+        padding:7px 15px;
+        text-transform: uppercase;
     }
 }

@@ -1,7 +1,7 @@
 include layouts/head.pug
 body
     //- include layouts/navigation.pug
-    section.header(style="background-image:url('../img/header/bg.jpg')")
+    section.header(style="background-image:url('../build/img/header/bg.jpg')")
         .header__container
             include layouts/navigation.pug
             .header__top
@@ -15,11 +15,11 @@ body
                             a +7 (3452) 566 226
                         li г. Тюмень, ул. Чернышевского, д. 1, к. 5
                         li ПН-ПТ: 09:00-18:00
-            img.header__logo(src="../img/logo.png")
+            img.header__logo(src="../build/img/logo.png")
             p.header__description
                 | Онлайн дискаунтер спецодежды
                 | и средств защиты для работы и отдыха
-            a.header__button перейти в каталог
+            a.header__button(href="products.html") перейти в каталог
     section.slider
         .slider__container
             div(uk-slider="autoplay: true; autoplay-interval: 5000; pause-on-hover: true")
@@ -29,7 +29,7 @@ body
                             - var n = 0;
                             while n < 3
                                 li
-                                    a.slider__slide(href="" style="background-image:url('../img/slider/rect.png')")
+                                    a.slider__slide(href="" style="background-image:url('../build/img/slider/rect.png')")
                                     - n++;
                 ul.uk-slider-nav.uk-dotnav
     section.tiles
@@ -39,15 +39,15 @@ body
         .tiles__container 
             .tiles__grid
                 .tiles__cell
-                    .tiles__item.tiles__item_yellow(style="background-image:url('../img/tiles/item.png')")
+                    .tiles__item.tiles__item_yellow(style="background-image:url('../build/img/tiles/item.png')")
                 .tiles__cell
-                    .tiles__item(style="background-image:url('../img/tiles/item.png')")
+                    .tiles__item(style="background-image:url('../build/img/tiles/item.png')")
                 .tiles__cell
-                    .tiles__item(style="background-image:url('../img/tiles/item.png')")
+                    .tiles__item(style="background-image:url('../build/img/tiles/item.png')")
                 .tiles__cell
-                    .tiles__item.tiles__item_yellow(style="background-image:url('../img/tiles/item.png')")
+                    .tiles__item.tiles__item_yellow(style="background-image:url('../build/img/tiles/item.png')")
                 .tiles__cell
-                    .tiles__item(style="background-image:url('../img/tiles/item.png')")
+                    .tiles__item(style="background-image:url('../build/img/tiles/item.png')")
 
 
     section.products.products_main
@@ -57,7 +57,7 @@ body
                 - var n = 0;
                 while n < 8
                     .products__cell
-                        .products__card.simple-card(style="background-image:url('../img/products/dude.png')")
+                        .products__card.simple-card(style="background-image:url('../build/img/products/dude.png')")
                             a.simple-card__link(data-text="подробнее")
                             - n++;
             .products__wrapper 
@@ -69,19 +69,19 @@ body
             h3.partners__heading Наши партнеры
             .partners__grid
                 .partners__cell 
-                    a.partners__item(style="background-image:url('../img/partners/1.png')")
+                    a.partners__item(style="background-image:url('../build/img/partners/1.png')")
                 .partners__cell 
-                    a.partners__item(style="background-image:url('../img/partners/2.png')")    
+                    a.partners__item(style="background-image:url('../build/img/partners/2.png')")    
                 .partners__cell 
-                    a.partners__item(style="background-image:url('../img/partners/3.png')")
+                    a.partners__item(style="background-image:url('../build/img/partners/3.png')")
                 .partners__cell 
-                    a.partners__item(style="background-image:url('../img/partners/4.png')")
+                    a.partners__item(style="background-image:url('../build/img/partners/4.png')")
                 .partners__cell 
-                    a.partners__item(style="background-image:url('../img/partners/5.png')")
+                    a.partners__item(style="background-image:url('../build/img/partners/5.png')")
                 .partners__cell 
-                    a.partners__item(style="background-image:url('../img/partners/6.png')")
+                    a.partners__item(style="background-image:url('../build/img/partners/6.png')")
                 .partners__cell 
-                    a.partners__item(style="background-image:url('../img/partners/7.png')")
+                    a.partners__item(style="background-image:url('../build/img/partners/7.png')")
     section.info
         .info__container
             ul.info__list
